@@ -1,0 +1,157 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+#video-bg {
+  position: absolute;
+  top: -50;
+  left: -100;
+  min-width: 200%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -1;
+}
+
+body,
+html {
+  overflow: hidden;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: -1; /* Ensure the video is behind other content */
+}
+
+.container {
+  opacity: 0;
+  background: transparent;
+  width: 80%;
+  margin: auto;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+  font-size: 20px;
+  padding: 50px;
+  padding-bottom: 50px;
+  background-color: rgb(24, 37, 61);
+}
+.selection-area {
+  margin-bottom: 50px;
+  display: flex;
+}
+.on-mobile {
+  display: block;
+  position: absolute;
+  color: rgb(255, 234, 0);
+  text-shadow: 5px 5px 5px 5px #ffffff;
+  font-size: 30px;
+}
+.charAt {
+  border-left: 1px solid white !important;
+}
+
+#typing-area {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding-bottom: 20px;
+}
+.red {
+  color: red;
+}
+
+#manual {
+  color: rgb(252, 219, 4);
+}
+
+#speed {
+  font-size: 50px;
+  padding: 30px;
+}
+
+/* CSS */
+.button-72 {
+  align-items: center;
+  background-color: initial;
+  background-image: linear-gradient(
+    rgba(179, 132, 201, 0.84),
+    rgba(57, 31, 91, 0.84) 50%
+  );
+  border-radius: 42px;
+  border-width: 0;
+  box-shadow: rgba(57, 31, 91, 0.24) 0 2px 2px,
+    rgba(179, 132, 201, 0.4) 0 8px 12px;
+  color: #ffffff;
+  cursor: pointer;
+  font-family: Quicksand, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  line-height: 15px;
+  margin: 5px;
+  padding: 5px 10px;
+  text-align: center;
+  text-decoration: none;
+  text-shadow: rgba(255, 255, 255, 0.4) 0 0 4px,
+    rgba(255, 255, 255, 0.2) 0 0 12px, rgba(57, 31, 91, 0.6) 1px 1px 4px,
+    rgba(57, 31, 91, 0.32) 4px 4px 16px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: baseline;
+}
+
+.button-72:hover {
+  background-image: linear-gradient(#b384c9, #391f5b 50%);
+}
+
+@media (min-width: 768px) {
+  .button-72 {
+    font-size: 21px;
+    padding: 18px 34px;
+  }
+  .container {
+    opacity: 1;
+  }
+  .on-mobile {
+    display: none;
+  }
+}
+
+@keyframes vibrate {
+  0% {
+    transform: translate(0);
+  }
+  20% {
+    transform: translate(-3px, 3px);
+  }
+  40% {
+    transform: translate(3px, -3px);
+  }
+  60% {
+    transform: translate(-3px, -3px);
+  }
+  80% {
+    transform: translate(3px, 3px);
+  }
+  100% {
+    transform: translate(0);
+  }
+}
+
+/* Apply the vibrate animation */
+.vibrate-once {
+  animation: vibrate 0.1s ease-in-out 1;
+  color: red;
+}
