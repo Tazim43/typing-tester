@@ -125,12 +125,12 @@ const handleKeyPress = (e) => {
   if (e.key === text[charPos]) {
     textArea.childNodes[charPos].innerHTML = "*";
     charPos++;
-  } else {
+  } else if (e.key != "Backspace") {
     textArea.childNodes[charPos].classList.add("vibrate-once");
 
     setTimeout(() => {
       textArea.childNodes[charPos].classList.remove("vibrate-once");
-    }, 300);
+    }, 100);
   }
 
   if (e.key === "Backspace") {
